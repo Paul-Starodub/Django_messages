@@ -12,6 +12,13 @@ def index(request: HttpRequest) -> HttpResponse:
             messages.error(request, "Your password isn't complex enough")
             return redirect("example:index")
 
+        messages.info(request, "This is the info message!")
+        messages.error(request, "ERROR! ERROR!")
+        messages.success(request, "You registered succesfully")
+        messages.warning(request, "Be careful!")
+
+        return redirect("example:show_messages")
+
     return render(request, "example/index.html")
 
 

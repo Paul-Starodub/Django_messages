@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Messages</title>
+</head>
+<body>
+<form action="" method="post">
+  {% csrf_token %}
+  <h1>Register</h1>
+  <label for="inputEmail">Email address</label>
+  <input type="email" name="email" id="inputEmail" placeholder="Email">
+  <p></p>
+  <label for="inputPassword">Password</label>
+  <input type="password" name="password" id="inputPassword" placeholder="Password">
+  <p></p>
+  {% if messages %}
+    {% for message in messages %}
+      {{ message }}
+    {% endfor %}
+  {% endif %}
+  <button type="submit">Register</button>
+</form>
+</body>
+</html>
